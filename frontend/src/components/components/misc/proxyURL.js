@@ -1,0 +1,1 @@
+export const PROXY_URL = "http://localhost:8000/mlalgos";

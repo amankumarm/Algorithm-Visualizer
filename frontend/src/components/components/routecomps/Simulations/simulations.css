@@ -1,0 +1,97 @@
+.myNavSimBar{
+/* background-color: transparent; */
+    box-shadow: 0px 5px 5px rgba(29, 28, 28, 0.158);
+}
+
+.mySimnav{
+    margin-right: 5em;
+    height: 3em;
+    width: 100%;
+
+}
+.mySimnavitem{
+    margin-top: 1em;
+    margin-right: 3em;
+    color:rgb(206, 202, 202);
+
+    text-decoration: none;
+
+    
+}
+.mySimnavitem:hover{
+    color:white;
+    text-decoration: none;
+    border-bottom: 2.5px solid rgb(67, 248, 239);
+    transform-origin: 0% 100%;
+    transition: 0.2s;
+    transition-property: left right;
+}
+.myNavSimBar{
+    width:100%;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0px 5px 5px rgba(29, 28, 28, 0.158);
+    background-color: rgba(63, 60, 60, 0.4);
+    /* background-color: ; */
+    color:black;
+}
+
+.algorithm{
+    margin-top: 50px;
+    margin-left: 26px;
+    width: 96%;
+    height:800px;
+    box-shadow: 0px 10px 10px 10px rgba(29, 28, 28, 0.158);
+    display: inline-block;
+    
+}
+
+.heading{
+    margin-top: 28px;
+    padding-left:28px ;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important ;
+    font-family:'Oswald', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 35px;
+    color: rgb(255, 253, 253);
+
+}
+hr{
+    border-top: 2.5px solid rgb(67, 248, 239);
+    width:45%;
+    margin-left:20px ;
+    /* float: left; */
+}
+
+.algool {
+    list-style-type: upper-roman;
+    font-family:'Oswald';
+    padding-bottom: 30px;
+    letter-spacing: 1px;
+    margin-left: 45px;
+    display: inline-flexbox;
+    
+}
+.li{
+    color: whitesmoke;
+    padding-top: 3px;
+    /* padding-left: ; */
+    list-style-type: lower-latin;
+    /* color:#447294 */
+    }
+.heads{
+    padding-top: 20px;
+    list-style-type: lower-roman;
+    font-size: 20px;
+    color: #FFD662FF;
+}
+.SimOuter{
+    background: url('./static/simback.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 100%;
+}
+#simouter2{
+    background-color: rgba(63, 60, 60, 0.4);
+}

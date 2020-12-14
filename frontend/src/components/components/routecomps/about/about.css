@@ -1,0 +1,79 @@
+.myNavAbBar {
+	box-shadow: 0px 5px 5px rgba(29, 28, 28, 0.11);
+}
+
+.myAbav {
+	margin-right: 5em;
+	height: 3em;
+	width: 100%;
+}
+.myAbnavitem {
+	margin-top: 1em;
+	margin-right: 3em;
+	color: rgb(233, 232, 232);
+	text-decoration: none;
+}
+.myAbnavitem:hover {
+	color: white;
+	text-decoration: none;
+	border-bottom: 2.5px solid #fcf951ff;
+	transform-origin: 0% 100%;
+	transition: 0.2s;
+	transition-property: left right;
+}
+.myNavAbBar {
+	width: 100%;
+	font-family: "Oswald", sans-serif;
+	color: black;
+	background-color: rgba(63, 60, 60, 0.5);
+}
+
+.aboutouter {
+	background-image: url(./static/marvin-meyer-SYTO3xs06fU-unsplash.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+.interns {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 3%;
+	border-radius: 50%;
+}
+#ak {
+	background-image: url(./static/ak.jpg);
+}
+#chetas {
+	background-image: url(./static/chetas.JPG);
+}
+#mathang {
+	background-image: url(./static/e239b840-b7c2-4ad6-b0d9-18eab3fe0d791.jpg);
+}
+#suhas {
+	background-image: url(./static/suhas.JPG);
+}
+#ashwin {
+	background-image: url(./static/ashwin.png);
+}
+#hardik {
+	background-image: url(./static/hardik.jpg);
+}
+#section {
+	background-color: rgba(63, 60, 60, 0.5);
+	font-family: "Roboto Condensed", sans-serif !important;
+	height: auto;
+}
+.MILPOS {
+	font-size: 55px;
+	color: white;
+	/* margin-left: 3.5em; */
+}
+#name {
+	color: white;
+}
+.pos {
+	color: #fcf6f5ff;
+}

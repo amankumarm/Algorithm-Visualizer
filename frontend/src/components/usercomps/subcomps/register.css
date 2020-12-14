@@ -1,0 +1,63 @@
+.register-outer{
+  /* background: linear-gradient(90deg,#92FE9D 0%,#00C9FF 100%); */
+  /* background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 100vh;
+  color: white;
+}
+
+  #outer{
+      padding:2em;
+      /* border:2px solid pink; */
+      height:89.5vh;
+      /* background-color:rgb(241, 240, 240); */
+    }
+    #outer-reg{
+      padding:2em;
+      /* border:2px solid pink; */
+      height:90vh;
+      /* background-color:rgb(241, 240, 240); */
+    }
+    .outerleft{
+      /* border:2px solid blue; */
+      width:62%;
+      float:left;
+      display:inline;
+      height:100%;
+      
+      
+    }
+    .outerright{
+      /* border:2px solid black; */
+       float:left;
+      width:37%;
+      display:inline;
+      height:100%;
+      padding-right: 8em;
+    }
+    
+    .innerright{
+      width:98%;
+      /* border:2px solid red; */
+      margin:1em 0.15em;
+      height:auto;
+      padding:2em 2.8em;
+    }
+    #heading{
+        text-align: center;
+        /* margin:0.5em; */
+    }
+    .cont{
+      text-align: center;
+      margin:0.5em;
+  }
+  #regimg{
+    margin:2em 7em 0em 10em;
+  }
+
+  
+  #Regbtn{
+    width: 100%;
+  }
