@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "dev": "webpack --mode development --watch ./frontend/src/index.js --output ./static/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./static/main.js",
     "subdev": "webpack --mode development --watch ./frontend/src/subindex.js --output ./frontend/static/frontend/submain.js"
   },
   "keywords": [],
