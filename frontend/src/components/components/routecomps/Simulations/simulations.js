@@ -31,7 +31,7 @@ class Simulations extends Component {
 									<ul>
 										<li className="li">
 											<a
-												href='/#/Simulations/algorithms/array'
+												href='http://localhost:5000/v#/Simulations/algorithms/array'
 												target='__blank'
 												style={{ textDecoration: "none", color: "white" }}>
 												Bubble Sort/ Selection Sort/ Insertion Sort/ Merge Sort/
@@ -44,7 +44,7 @@ class Simulations extends Component {
 									<ul>
 										<li className="li">
 											<a
-												href="/#/Simulations/algorithms/array"
+												href="http://localhost:5000/v#/Simulations/algorithms/array"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Breadth First Search
@@ -52,7 +52,7 @@ class Simulations extends Component {
 										</li>
 										<li className="li">
 											<a
-												href="/#/Simulations/algorithms/array"
+												href="http://localhost:5000/v#/Simulations/algorithms/array"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Depth First Search
@@ -60,7 +60,7 @@ class Simulations extends Component {
 										</li>
 										<li className="li">
 											<a
-												href="/#/Simulations/algorithms/array"
+												href="http://localhost:5000/v#/Simulations/algorithms/array"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Djikstra{" "}

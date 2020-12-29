@@ -6,23 +6,20 @@ import store from '../store';
 import {Provider as AlertProvider} from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic'
 import Alert from './minors/Alerts'
-// import Dashboard from "./usercomps/dashboard";
+import Dashboard from "./usercomps/dashboard";
 import Alerts from './minors/Alerts';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-// import Login from "../components/usercomps/login";
-// import Register from '../components/usercomps/register'
-// import PrivateRoute from './common/privateroute'
+import Login from "../components/usercomps/login";
+import Register from '../components/usercomps/register'
+import PrivateRoute from './common/privateroute'
 import { loadeuser } from "../actions/auth";
       
-
-import HApp from "./App.jsx"
-// import GHome from "./components/routecomps/home/App";
-// import Simulations from "./components/routecomps/Simulations/simulations";
-// import About from "./components/routecomps/about/about";
-// import Sorting from "./sorting";
-// import { LinRegress } from "./components/lin-regress/linRegress";
-// import { NavBar } from "./components/navbar/navbar";
-// import { KMeans } from "./components/kmeans/kmeans";
+import Simulations from "./components/routecomps/Simulations/simulations";
+import About from "./components/routecomps/about/about";
+import Sorting from "./sorting";
+import { LinRegress } from "./components/lin-regress/linRegress";
+import { NavBar } from "./components/navbar/navbar";
+import { KMeans } from "./components/kmeans/kmeans";
 
 
 
@@ -55,14 +52,12 @@ class App extends Component{
                                 <Router>
 
                                 <Switch>
-                                    <Route exact path="/" component={HApp}></Route>
-{/* 
                                     <Route exact path="/Simulations" component={Simulations}></Route>
                                     <Route exact path="/About" component={About}></Route>
                                     <Route exact path="/Contribute" component={Login}></Route>
                                     <Route exact path="/Simulations/algorithms/array"component={Sorting}></Route>
         							<Route exact path="/k-means" component={KMeans} />
-                                    <Route exact path="/linear-regression" component={LinRegress} /> */}
+                                    <Route exact path="/linear-regression" component={LinRegress} /> 
 
 
 
