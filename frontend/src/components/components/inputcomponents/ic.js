@@ -29,7 +29,7 @@ class NavBar extends Component{
 			<div>
 				<Navbar className={this.props.className} expand="lg">
 					<Navbar.Brand
-						href="#home"
+						href="/"
 						style={{
 							"marginLeft": "3.5em",
 							fontSize: `${22}px`,

@@ -118,7 +118,7 @@ class Register extends Component {
                   </nav>
             <div id='outer-reg'>
                 <div className="outerleft">
-                  <img src="/static/frontend/register.svg" 
+                  <img src="./frontend/register.svg" 
                         width="auto" id="regimg" />
                 </div>
                 <div className="outerright">

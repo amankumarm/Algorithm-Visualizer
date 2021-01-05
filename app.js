@@ -8,7 +8,7 @@ app.use(express.static('static'))
 app.get('/',(req,res)=>{
      res.render('home')
 })
-app.get('/v',(req,res)=>{
+app.get('/v/',(req,res)=>{
      res.render('root')
 })
 

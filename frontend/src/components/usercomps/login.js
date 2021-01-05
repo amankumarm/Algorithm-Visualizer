@@ -64,7 +64,7 @@ class Login extends Component {
                 </nav> 
             <div id='outer-login'>
                 <div className="outerleft">
-                  <img src={"/static/frontend/login.svg"} className="login-img" width="auto" />
+                  <img src={"./frontend/login.svg"} className="login-img" width="auto" />
                 </div>
                 <div className="outerright">
                   <div className="innerright">
