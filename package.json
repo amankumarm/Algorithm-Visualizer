@@ -48,7 +48,14 @@
     "semantic-ui-react": "^1.2.1",
     "style-loader": "^1.2.1",
     "vis-react": "^0.5.1",
-    "webp-loader": "^0.6.0"
+    "webp-loader": "^0.6.0",
+    "connect-flash": "^0.1.1",
+    "cookie-session": "^1.4.0",
+    "lodash": "^4.17.20",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
