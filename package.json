@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./frontend/src/index.js --output ./static/main.js",
+    "dev1": "webpack --mode development --watch ./frontend/src/components/usercomps_copy/main.js --output ./static/user.js",
     "build": "webpack --mode production ./frontend/src/index.js --output ./static/main.js",
     "subdev": "webpack --mode development --watch ./frontend/src/subindex.js --output ./frontend/static/frontend/submain.js"
   },

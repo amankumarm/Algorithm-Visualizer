@@ -43,6 +43,9 @@ app.get('/v/',(req,res)=>{
      res.render('root')
 })
 
+app.get('/user/',(req,res)=>{
+     res.render('user')
+})
 app.get('/test',(req,res)=>{
      res.send(req.user)
 })

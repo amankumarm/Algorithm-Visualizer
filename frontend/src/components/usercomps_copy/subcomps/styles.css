@@ -1,0 +1,170 @@
+.home-content{
+    /* display: flex; */
+    color:rgb(255, 238, 191);
+    background: url('../../../static/h1.png');  
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border: 2px solid red; */
+    opacity: 10;
+    
+}
+
+
+.home-container{
+    height:90vh;
+    font-family: 'PT Sans Narrow', sans-serif;
+    padding:15%;
+    color:white;
+    word-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.171) !important;
+}
+
+
+.home-buttons{
+    display: flex;
+    height:100%;
+    /* border: 2px solid white; */
+    padding: 2em 16em;
+}   
+.H-bt-1{
+    height: 45px;
+    padding:3px;
+    width:160px;
+    color:white;
+    letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, 0.171) !important;
+    border: 1.5px solid white;
+    border-radius: 5px;
+}
+
+#thisbutton{
+    margin-right: 14em;
+}
+
+/* search-user-has posts */
+.search-outer{
+    background: url('../../../static/posts-landing.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+}
+
+.search-navbar{
+    background-color: rgba(0, 0, 0, 0.452);    
+}
+
+.allpostsofuserappearhere{
+    margin: 1em 9em;
+}
+
+.nav-things{
+    color:white !important;
+}
+
+.displayimage{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:300px;
+    width: 100%;
+
+}
+.post{
+    margin-top: 45px;
+    border-left: 5px solid yellow ;
+    background-color: rgba(0,0,0, 0.2);
+}
+
+.imgdiv{
+    margin: 1em 5em;
+}
+.postusername{
+    font-family: 'PT Sans Narrow', sans-serif;
+    padding: 1em;
+    color:white;
+}
+
+.postcontent{
+        font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#seeit{
+    margin:2em;
+    font-size: 20px;
+    color:white;
+}
+
+/* search-user-doesnt exist */
+
+#nouserfound{
+    height:100vh;
+}
+.noposts{
+    height: 100vh;
+}
+.userdoesntexist{
+    font-family: 'PT Sans Narrow', sans-serif;
+    margin:5em 3em 1.8em 3em;        
+    height:150px;
+    border-left:4.5px solid rgb(251, 255, 23);
+    background-color: rgba(0, 0, 0, 0.10);
+    padding-top:3em;
+    display: flex;
+    padding-left: 10em;
+}
+.usernotfoundpng{
+    background: url('../../../static/usernotfound.png');
+    width: 37px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:37px;
+    /* height:6em; */
+}
+.box{
+    margin-left: 0.7em;
+}
+
+.postnotfoundpng{
+    background: url('../../../static/nopost.png');
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:50px;
+
+}
+
+.mypostsview{
+    background: url('../../../static/myposts-landing.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+.votescount{
+    /* border: 2px solid red; */
+    padding-left: 2em;
+    
+}
+.upvote{
+    /* width:35px; */
+    background: url('../../../static/upvote-logo.png');
+}
+.postview{
+    color:white !important;
+}
+
+
+
+
+.categ{
+    margin:0em 0em 1em 2.5em;
+    color:white;
+}
+.categ-hr{
+    border-bottom: 2px solid white;
+    margin: 0px 0px 15px 0px ;
+    width:10%;
+
+}
+.items{
+    margin-right:10px;
+}
