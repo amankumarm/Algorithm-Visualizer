@@ -8,7 +8,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import React,{useState} from 'react'
 import ReactDom from 'react-dom'
 import { authState,errState,postState } from "./initialStates";
-
+import Home from './home'
 
 function Main(){
     const [auth, setauth] = useState(authState)
@@ -20,6 +20,9 @@ function Main(){
     return (
         <Router>
             <Switch>
+                <Route exact path='/'>
+                    <Home />
+                </Route>
                 <Route exact path='/accsett' >
                     <Accsett auth={authprop} err={errprop} posts={postprop}  /> 
                 </Route>

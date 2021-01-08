@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
 import Usernavbar from './subcomps/usernavbar'
 import "./subcomps/styles.css";
+import axios from 'axios'
 import { Link } from 'react-router-dom';
 export class home extends Component {
+    componentDidMount(){
+     axios.get('/user/getstatus')
+     .then(res=>console.log( res))
+     .catch(err=>console.log(err))   
+    }
     render() {
         return (
             <div className="home-content">

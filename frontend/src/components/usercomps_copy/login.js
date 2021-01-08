@@ -1,27 +1,25 @@
 import React, { Component } from 'react'
 import './subcomps/login.css'
 import { Link, Redirect } from 'react-router-dom'
+import { rest } from 'lodash'
+import axios from 'axios'
 class Login extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-             username:"",
-             password:""
+            registered:false,
+            loggedin:false
         }
-        this.changehandler=this.changehandler.bind(this)
     }
 
-
-  changehandler=(e)=>{
-      this.setState({
-        [e.target.name]:e.target.value
-      })
-    }
 
     submithandler=(e)=>{
       e.preventDefault()
-     
+      this.setState({
+        ...this.state,
+        registered:true
+      })
     }
 
 
@@ -72,7 +70,7 @@ class Login extends Component {
                         <br/>
                       <p style={{margin:0,padding:0,textAlign:'center'}}>Didn't Join Our Community Yet? <br/></p>
                           <form action='/auth/google' method="POST">
-                          <button type="submit" className="btn btn-light btnlogin">
+                          <button type="submit" className="btn btn-light btnlogin" onClick={this.submithandler}>
                           <img src={'./frontend/google-symbol(1).png'} /><p className="flex-item2">Register</p>
                         </button>
                         </form>

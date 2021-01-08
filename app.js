@@ -8,6 +8,8 @@ const authrouter=require('./routes/auth')
 const {User,FileRoute} = require('./models/index')
 const fileuploadroute=require('./routes/fileupload')
 const passportconfig=require('./config/passport-setup')
+const userroute=require('./routes/userroute')
+
 const app = express()
 app.use(fileupload())
 app.set('view engine','ejs')
@@ -32,7 +34,7 @@ mongoose.connect("mongodb+srv://algovizz:algovizz@node.bczjx.mongodb.net/Algoviz
 app.use(passport.initialize())
 app.use(passport.session())
 app.use('/auth',authrouter)
-
+app.use('/user',userroute)
 
 //routes
 app.use('/file',fileuploadroute)

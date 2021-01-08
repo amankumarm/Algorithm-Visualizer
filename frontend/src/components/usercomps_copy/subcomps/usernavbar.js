@@ -99,9 +99,7 @@ class Usernavbar extends Component {
                 )
         }
         }
-        else{
-            return null
-        }
+    
     }
 }
 
