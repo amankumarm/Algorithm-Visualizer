@@ -9,9 +9,9 @@ class Accsett extends Component {
         super(props)
     
         this.state = {
-            first_name:this.props.userdata.first_name,
-            last_name:this.props.userdata.last_name,
-            username:this.props.userdata.username,
+            first_name:"",
+            last_name:"",
+            username:"",
             new_password:"",
             confirm_password:""
              
@@ -27,11 +27,11 @@ class Accsett extends Component {
 
     
     deletehandler=()=>{
-        const data={username:this.props.userdata.username}
+        // const data={username:this.props.userdata.username}
         const confirmation=confirm("Are You Sure")
         if(confirmation){
-        this.props.deleteuseracc(this.props.userdata.username)
-        this.props.logout()
+        // this.props.deleteuseracc(this.props.userdata.username)
+        // this.props.logout()
         }
         else{
             alert("Thank you For Being with Us")
@@ -47,13 +47,13 @@ class Accsett extends Component {
 
     passwordsubmitHandler=(e)=>{
         e.preventDefault()
-        const {new_password,confirm_password}=this.state
-        const {alert}=this.props
+        // const {new_password,confirm_password}=this.state
+        // const {alert}=this.props
         if(new_password.length>8 || confirm_password.lenght>8){
                 if(new_password===confirm_password){
                     const confirmation=confirm("Are you Sure ?")
                     if(confirmation){
-                        this.props.changepassword(this.state.username,this.state.new_password)
+                        // this.props.changepassword(this.state.username,this.state.new_password)
                         this.setState({
                             new_password:"",
                             confirm_password:""
@@ -99,8 +99,8 @@ class Accsett extends Component {
         const {first_name,last_name}=this.state
 
         if(first_name.length>2 || last_name.lenth>2 ){
-            this.props.changename(this.state.username,this.state.first_name,this.state.last_name)
-            this.props.alert.success("Name Updated")
+            // this.props.changename(this.state.username,this.state.first_name,this.state.last_name)
+            // this.props.alert.success("Name Updated")
             for(let i=0;i<3;i++){
                 const reset1=document.getElementsByClassName('ip-acc')[i]
                 reset1.value=""
@@ -111,12 +111,13 @@ class Accsett extends Component {
                 const reset1=document.getElementsByClassName('ip-acc')[i]
                 reset1.value=""
               }
-            this.props.alert.error("Invalid names")
+            // this.props.alert.error("Invalid names")
         }
         
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className="accsett-outer"> 
                 <Usernavbar />
@@ -140,16 +141,16 @@ class Accsett extends Component {
                                 <form>  
                                 <div className="form-group">
                                         <label htmlFor="exampleInputEmail1">Username</label>
-                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={this.props.userdata.username} readOnly/>
+                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={"development"} readOnly/>
                                         <small id="usernameHelp" className="form-text text-muted">Sorry! Your username cannot be changed</small>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputEmail1">First Name</label>
-                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp"  name="first_name"  onChange={this.changehandler} placeholder={`${this.props.userdata.first_name} - (current)`}/>
+                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp"  name="first_name"  onChange={this.changehandler} placeholder={` - (current)`}/>
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputEmail1">Last Name</label>
-                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name"  onChange={this.changehandler} placeholder={`${this.props.userdata.last_name} - (current) `}/>
+                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name"  onChange={this.changehandler} placeholder={`- (current) `}/>
                                     </div>
                                     <button type="submit" className="btn btn-light" onClick={this.namesubmitHandler}>Submit</button>
                                 </form>

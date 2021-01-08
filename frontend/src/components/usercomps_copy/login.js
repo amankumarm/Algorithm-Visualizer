@@ -21,10 +21,7 @@ class Login extends Component {
 
     submithandler=(e)=>{
       e.preventDefault()
-      this.props.login(this.state.username,this.state.password)
-      // var val=document.getElementsByClassName("form-control")
-      // ********************************************************************************************** fix me if error .val="" 
-      // val.value=""
+     
     }
 
 
@@ -65,18 +62,21 @@ class Login extends Component {
                     <h3 id="heading"> Welcome Back :) </h3>
                     <p className="cont">ThankYou For Connecting with us </p>
                       <br/>
-                    <form>
-                        <div className="form-group">
-                          <label htmlFor="exampleInputEmail1">Userame</label>
-                          <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"   name="username"  onChange={this.changehandler} />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="exampleInputPassword1">Password</label>
-                          <input type="password" className="form-control" id="exampleInputPassword1" name="password"  onChange={this.changehandler}/>
-                        </div>
-                        <button type="submit" className="btn btn-light btnlogin" onClick={this.submithandler}>Login</button>
-                      </form>
-                          <p>Didn't Join Our Community Yet?. <br/><Link to='/register' style={{color:'purple'}}>Register Now</Link> </p>
+                      <form action='/auth/google' method="POST">
+                          <button type="submit" className="btn btn-light btnlogin">
+                          <img src={'./frontend/google-symbol(1).png'} /><p className="flex-item2">Login With Google</p>
+                        </button>
+                        </form>
+                        
+                        <hr/>
+                        <br/>
+                      <p style={{margin:0,padding:0,textAlign:'center'}}>Didn't Join Our Community Yet? <br/></p>
+                          <form action='/auth/google' method="POST">
+                          <button type="submit" className="btn btn-light btnlogin">
+                          <img src={'./frontend/google-symbol(1).png'} /><p className="flex-item2">Register</p>
+                        </button>
+                        </form>
+
                   </div>
                 </div>
               </div> 

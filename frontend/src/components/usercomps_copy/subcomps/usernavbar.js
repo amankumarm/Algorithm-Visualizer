@@ -21,8 +21,8 @@ class Usernavbar extends Component {
     changehandler=(e)=>{
         this.setState({
             [e.target.name]:e.target.value,
-            posts:this.props.userinfo.allposts,
-            users:this.props.userinfo.allusers
+            // posts:this.props.userinfo.allposts,
+            // users:this.props.userinfo.allusers
         })
         // console.log(this.state)
     }    
@@ -38,11 +38,11 @@ class Usernavbar extends Component {
     }
     render() {
 
-        if(this.props.userinfo.userdata.username){
+        if(true){
             if(this.state.startsearch && this.state.usersearch){
                 return <Redirect to={{
                     pathname: '/usersearch',
-                    state: { username:this.props.userinfo.userdata.username,
+                    state: {
                             searched:this.state.usersearch,
                             allposts:this.state.posts,
                             allusers:this.state.users }
@@ -83,12 +83,12 @@ class Usernavbar extends Component {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hi! {this.props.userinfo.userdata.username}</a>
+                            Hi! {""}</a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                             <Link className="dropdown-item" to='/user/accountsettings'> Account Settings </Link>
                             <Link className="dropdown-item" to='/Simulations'> Simulations </Link>
                             <Link className="dropdown-item" to='/About-us'> About Us </Link>
-                            <a className="dropdown-item"  onClick={this.props.logout}>Logout</a>
+                            <a className="dropdown-item" >Logout</a>
                             </div>
                         </li>
                         </ul>

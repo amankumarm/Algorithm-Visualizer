@@ -22,6 +22,7 @@
   display:inline;
   height:100%;
   padding-right: 8em;
+  padding-top: 5em;
 }
 
 .innerright{
@@ -50,4 +51,12 @@
   .btnlogin{
     width: 100%;
     margin: 0;
+    display: flex;
   }
+
+
+.flex-item2{
+  flex-grow: 0.8;
+  margin:0; 
+  padding:0;
+}

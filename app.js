@@ -22,9 +22,10 @@ app.use(cookieSession({
    
 
 
+app.listen(3000,()=>console.log("3000"))
 mongoose.connect("mongodb+srv://algovizz:algovizz@node.bczjx.mongodb.net/Algovizz?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true})
 .then(res=>{
-     app.listen(3000,()=>console.log('Listening at 3000'))
+     // app.listen(3000,()=>console.log('Listening at 3000'))
 })
 .catch(err=>console.log(err))
 
@@ -37,7 +38,7 @@ app.use('/auth',authrouter)
 app.use('/file',fileuploadroute)
 
 app.get('/',(req,res)=>{
-     res.render('home copy')
+     // res.render('home copy')
 })
 app.get('/v/',(req,res)=>{
      res.render('root')

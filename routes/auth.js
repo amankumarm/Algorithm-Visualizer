@@ -18,7 +18,7 @@ router.post('/google',passport.authenticate('google',{
 
 router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
    console.log(req.user)
-//    res.send(req.user.username)
+    res.redirect('/user#/accsett')
 res.end()
 })
 
