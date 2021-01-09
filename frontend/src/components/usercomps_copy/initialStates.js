@@ -1,9 +1,8 @@
 export const authState={
-    token:localStorage.getItem('token'),
     isAuthenticated:false,
-    isLoading:false,
     user:"aman",
-    isRegistered:false
+    isRegistered:false,
+    isLoading:false
 }
 export const errState={data:{},ststus:"",message:""}
 export const postState={
