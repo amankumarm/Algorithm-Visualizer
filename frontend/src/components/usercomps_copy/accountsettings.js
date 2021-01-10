@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Usernavbar from './subcomps/usernavbar'
 import './subcomps/main.css'
 import { withAlert } from 'react-alert'
+import { Redirect } from 'react-router-dom'
 
 class Accsett extends Component {
 
@@ -13,7 +14,8 @@ class Accsett extends Component {
             last_name:"",
             username:"",
             new_password:"",
-            confirm_password:""
+            confirm_password:"",
+            isLoggedin:false
              
         }
         this.changehandler=this.changehandler.bind(this)
@@ -23,7 +25,14 @@ class Accsett extends Component {
     
 
 
-
+    // componentDidMount(){
+    //     console.log(this.props)
+    //     if (!this.props.auth[0].isAuthenticated) {
+    //         this.setState({...this.state,isLoggedin:false})
+    //     } else {
+    //         this.setState({...this.state,isLoggedin:true})
+    //     }
+    // }
 
     
     deletehandler=()=>{
@@ -117,7 +126,11 @@ class Accsett extends Component {
     }
 
     render() {
-        console.log(this.props)
+        const isLoggedin = this.props.auth[0].isAuthenticated
+        // console.log(this.props)
+        const auth=this.props.auth[0]
+        const user=this.props.auth[0].user
+        if (isLoggedin) {
         return (
             <div className="accsett-outer"> 
                 <Usernavbar />
@@ -139,11 +152,6 @@ class Accsett extends Component {
                                 </b></h2>
                                 <hr className="accsett-hr"/>
                                 <form>  
-                                <div className="form-group">
-                                        <label htmlFor="exampleInputEmail1">Username</label>
-                                        <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder={"development"} readOnly/>
-                                        <small id="usernameHelp" className="form-text text-muted">Sorry! Your username cannot be changed</small>
-                                    </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputEmail1">First Name</label>
                                         <input type="text" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp"  name="first_name"  onChange={this.changehandler} placeholder={` - (current)`}/>
@@ -156,7 +164,7 @@ class Accsett extends Component {
                                 </form>
                             </div>
                         </div>
-                        <div className="ak shadow col-md-4">
+                        {/* <div className="ak shadow col-md-4">
                         <div>
                                 <h2><b>
                                     Update Password
@@ -164,10 +172,6 @@ class Accsett extends Component {
                                 </h2>
                                 <hr className="accsett-hr"/>
                                 <form>
-                                <div className="form-group">
-                                        <label htmlFor="exampleInputEmail1" >Current Pasword </label>
-                                        <input type="password" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="**********" readOnly   />
-                                    </div>
                                     <div className="form-group">
                                         <label htmlFor="exampleInputEmail1"  >New Password</label>
                                         <input type="password" className="form-control ip-acc" id="exampleInputEmail1" aria-describedby="emailHelp" name="new_password" onChange={this.changehandler} />
@@ -179,7 +183,7 @@ class Accsett extends Component {
                                     <button type="submit" className="btn btn-light" onClick={this.passwordsubmitHandler}>Change Password</button>
                                 </form>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="row">
@@ -200,6 +204,12 @@ class Accsett extends Component {
             
             </div>
         )
+        }
+        else {
+            return(
+                <Redirect to='/Login' /> 
+            )
+        }
     }
 }
 

@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import Usernavbar from './subcomps/usernavbar'
 import './subcomps/styles.css'
 import { withAlert } from 'react-alert'
+import {Redirect} from 'react-router-dom'
 class Posthere extends Component {
     constructor(props) {
-    
+        super()
         this.state = {
              image:false,
              file:false,
@@ -38,8 +39,8 @@ class Posthere extends Component {
                 form_data.append('postimage',ifile,ifile.name)
                 form_data.append('htmlfile',Hfile,Hfile.name)
                 form_data.append('categ',this.state.category)
-                this.props.postapost(form_data)
-                this.props.alert.success("Posted")
+                // this.props.postapost(form_data)
+                // this.props.alert.success("Posted")
                 this.setState({
                 image:null,
                 file:null,
@@ -47,16 +48,18 @@ class Posthere extends Component {
             })
             }
             else{
-                this.props.alert.error("Select Category")
+                // this.props.alert.error("Select Category")
             }
             
         }  
         else{   
-            this.props.customerror("Please select both the files")
+            // this.props.customerror("Please select both the files")
         }        
     }
     render() {
-
+        const auth=this.props.auth[0]
+        const user=this.props.auth[0].user
+        if (auth.isAuthenticated) {
         return (
             <div className="submit-outer">
                     <Usernavbar />
@@ -122,7 +125,15 @@ class Posthere extends Component {
             </div>
             </div>
         )
+    } else {
+     return <Redirect to='/Login' />       
     }
+    
+
+
+// 
+
+}
 }
 
 

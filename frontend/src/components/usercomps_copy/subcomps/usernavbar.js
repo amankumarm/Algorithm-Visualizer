@@ -75,19 +75,16 @@ class Usernavbar extends Component {
                            
                         </li>
                         <li className="nav-item active">
-                        <a className="nav-link" href="http://localhost:8000/#/user/posts">My Posts</a>
+                        <a className="nav-link" href="/user#/userposts">My Posts</a>
                         </li>
                         <li className="nav-item active">
-                        <a className="nav-link" href="http://localhost:8000/#/post">CREATE</a>
+                        <a className="nav-link" href="/user#/post">CREATE</a>
 
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hi! {""}</a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <Link className="dropdown-item" to='/user/accountsettings'> Account Settings </Link>
-                            <Link className="dropdown-item" to='/Simulations'> Simulations </Link>
-                            <Link className="dropdown-item" to='/About-us'> About Us </Link>
                             <a className="dropdown-item" >Logout</a>
                             </div>
                         </li>

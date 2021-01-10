@@ -18,10 +18,7 @@ export class home extends Component {
     
     asyncFunc= async ()=> {
         try {
-          // fetch data from a url endpoint
           const response = await axios.get("/user/getstatus");
-        //   const data = await response.json();
-            // console.log(response)
             this.setState({
                 ...this.state,
                 isAuthenticated:true,
@@ -29,7 +26,8 @@ export class home extends Component {
                 isLoading:false
             })
             console.log(this.state)
-        //   return data;
+            const setauth=this.props.auth[1]
+            setauth(this.state)
         } catch (error) {
            this.setState({
                ...this.state,
