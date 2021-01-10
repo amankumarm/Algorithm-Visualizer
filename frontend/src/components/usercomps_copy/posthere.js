@@ -3,13 +3,16 @@ import Usernavbar from './subcomps/usernavbar'
 import './subcomps/styles.css'
 import { withAlert } from 'react-alert'
 import {Redirect} from 'react-router-dom'
+import axios from 'axios'
+import { image } from 'd3'
 class Posthere extends Component {
     constructor(props) {
         super()
         this.state = {
              image:false,
              file:false,
-             category:""
+             category:"",
+             posting:false
 
         }
     }
@@ -26,6 +29,24 @@ class Posthere extends Component {
         })
     }
 
+    asyncsubmit=async (form_data)=>{
+        try {
+            const response  = await axios.post('/user/post/',form_data)
+            if(response.status===200){
+                this.setState({
+                    ...this.state,
+                    posting:false,
+                    image:false,
+                    file:false,
+                    category:""
+                })
+            }            
+            
+        } catch (error) {
+                console.log(error)
+        }
+    }
+
     submithandler=(e)=>{
         e.preventDefault();
         let form_data = new FormData()
@@ -39,7 +60,7 @@ class Posthere extends Component {
                 form_data.append('postimage',ifile,ifile.name)
                 form_data.append('htmlfile',Hfile,Hfile.name)
                 form_data.append('categ',this.state.category)
-                // this.props.postapost(form_data)
+                this.asyncsubmit(form_data)
                 // this.props.alert.success("Posted")
                 this.setState({
                 image:null,
@@ -76,7 +97,7 @@ class Posthere extends Component {
                                     <div className="btn-img">
                                         <label  htmlFor="image1" id="labelid" >Image </label>
                                     </div>
-                                        <input type='file' className="hideit" accept="image/png , image/jpeg"  name="image" id="image1" onChange={this.changeHandler}/>
+                                        <input type='file' className="hideit" accept="image/*"  name="image" id="image1" onChange={this.changeHandler}/>
                                 <br />
                                     <div className="btn-img">
                                         <label  htmlFor="htmlfile" id="labelid"> Html - File</label>

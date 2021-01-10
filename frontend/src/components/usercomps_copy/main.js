@@ -15,9 +15,11 @@ function Main(){
     const [auth, setauth] = useState(authState)
     const [err, seterr] = useState(errState)
     const [posts, setposts] = useState(postState)
+    const [search,setsearch] = useState("")
     const authprop=[auth,setauth]
     const errprop=[err,seterr]
     const postprop=[posts,setposts]
+    const searchprop=[search,setsearch]
 
    
 
@@ -31,7 +33,7 @@ function Main(){
                     <Accsett auth={authprop}/> 
                 </Route> */}
                 <Route exact path='/Dashboard' >
-                    <Dashboard auth={authprop} err={errprop} posts={postprop}/>
+                    <Dashboard auth={authprop} search={search} posts={postprop} />
                 </Route>
                 <Route exact path='/Login'  >
                     <Login auth={authprop} />
@@ -40,7 +42,7 @@ function Main(){
                     <Posthere auth={authprop} err={errprop} posts={postprop}/> 
                 </Route>
                 <Route exact path='/searchresult' >
-                    <Searchresult auth={authprop} err={errprop} posts={postprop}/> 
+                    <Searchresult auth={authprop} search={search}/> 
                 </Route>
                 
             </Switch>

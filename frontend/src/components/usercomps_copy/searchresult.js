@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import "../usercomps/subcomps/styles.css";
 
 class Searchresult extends Component {
-    constructor(props) {
-            
-        // this.state = {
-        //      userslist:this.props.location.state.allusers,
-        //      postslist:this.props.location.state.allposts,
-        //      username:this.props.location.state.username,
-        //      searched:this.props.location.state.searched,
-        //      searchedpostsarray:[],
-        //      userstatus:false
 
-        // }
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            searcheduser:this.props.search[0],
+            
+        }
+    }
+    
+    componentDidMount(){
+
     }
     
     
