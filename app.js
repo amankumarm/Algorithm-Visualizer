@@ -5,10 +5,11 @@ const passport = require("passport")
 const fileupload=require('express-fileupload')
 const mongoose = require('mongoose')
 const authrouter=require('./routes/auth')
-const {User,FileRoute} = require('./models/index')
+const {User,FileRoute,Post} = require('./models/index')
 const fileuploadroute=require('./routes/fileupload')
 const passportconfig=require('./config/passport-setup')
 const userroute=require('./routes/userroute')
+const Posts = require('./models/posts')
 
 const app = express()
 app.use(fileupload())
@@ -50,7 +51,7 @@ app.get('/user/',(req,res)=>{
      res.render('user')
 })
 app.get('/test',(req,res)=>{
-     res.send(req.user)
+//     
 })
 
 //check git logs

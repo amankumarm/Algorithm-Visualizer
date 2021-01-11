@@ -1,4 +1,4 @@
-export const generaterandomname=()=>{
+module.exports= function generaterandomname(){
     const main='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789_'
     var newstring=""
     for (let i = 0; i <15; i++) {

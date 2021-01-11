@@ -4,7 +4,8 @@ import './subcomps/styles.css'
 import { withAlert } from 'react-alert'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
-import { image } from 'd3'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class Posthere extends Component {
     constructor(props) {
         super()
@@ -61,7 +62,8 @@ class Posthere extends Component {
                 form_data.append('htmlfile',Hfile,Hfile.name)
                 form_data.append('categ',this.state.category)
                 this.asyncsubmit(form_data)
-                // this.props.alert.success("Posted")
+                const successmessage = () => toast("Posted")
+                
                 this.setState({
                 image:null,
                 file:null,
@@ -82,7 +84,9 @@ class Posthere extends Component {
         const user=this.props.auth[0].user
         if (auth.isAuthenticated) {
         return (
+            
             <div className="submit-outer">
+                <ToastContainer />
                     <Usernavbar />
             <div className="postsdiv">
                 <div className="submit-left submit-box">

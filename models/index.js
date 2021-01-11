@@ -1,3 +1,4 @@
+const Post=require('./posts')
 const mongoose=require('mongoose')
 const Schema= mongoose.Schema
 
@@ -36,4 +37,4 @@ const routeschema=new Schema({
 
 const FileRoute=mongoose.model('FileRoute',routeschema)
 
-module.exports={User,FileRoute}
+module.exports={User,FileRoute,Post}
