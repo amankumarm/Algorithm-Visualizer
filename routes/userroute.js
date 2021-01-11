@@ -59,7 +59,7 @@ router.post('/post',checkauth,(req,res)=>{
 })
 
 router.get('/getuserposts',checkauth,(req,res)=>{
-    
+        
 })
 
 
