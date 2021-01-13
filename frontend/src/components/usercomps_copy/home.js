@@ -82,7 +82,7 @@ export class home extends Component {
         else{
             console.log(this.state)
             return(
-           <>went wrong </>    
+           <Redirect to ='/Login' />    
             )
         }
         

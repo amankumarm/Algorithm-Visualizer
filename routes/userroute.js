@@ -11,9 +11,9 @@ const checkauth=(req,res,next)=>{
     }
 }
 
-router.get('/getstatus',checkauth,(req,res)=>{
-      res.json({user:req.user}) 
-})
+router.get('/getstatus',checkauth,(req,res)=>{  
+    res.status(200).json({user:req.user}) 
+})  
 
 router.post('/post',checkauth,(req,res)=>{
     const id=req.user.googleid

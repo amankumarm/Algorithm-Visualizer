@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import './subcomps.css'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
-import { asyncFunc } from "../subcomps/actions";
 import Loading from './loading';
-
 class Postsdiv extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
+            isLoading:false,
+            isAuthenticated:false,
         }
         this.asyncFunc=this.asyncFunc.bind(this)
         this.asyncposts=this.asyncposts.bind(this)
@@ -18,10 +18,11 @@ class Postsdiv extends Component {
     asyncFunc= async ()=> {
         try {
           const response = await axios.get("/user/getstatus");
-          if(response.status!==403){
+          if(response.status===200){
           this.setState({
                 ...this.state,
-                isLoading:false
+                isLoading:false,
+                isAuthenticated:true
             })
             const setauth=this.props.auth[1]
             setauth({isAuthenticated:true,user:response.data.user,isLoading:false})
@@ -47,7 +48,6 @@ class Postsdiv extends Component {
         }
     }
     componentDidMount(){
-        
         if (!this.props.auth[0].isAuthenticated) { 
         this.setState({
             ...this.state,
@@ -57,35 +57,27 @@ class Postsdiv extends Component {
     }
         if (!this.props.posts[0].status) {
             this.setState({
-                postsLoading:true
+                isLoading:true
             })
             this.asyncposts()
         }
-        this.setState({postsLoading:false})
+        this.setState({isLoading:false})
     }
-
-    
-    
-
-    
-    // rende(){
-    //     const {loggedin} = this.state
-        
-    
-    // }
-
-
-
-
     render(){
+
+        const {isLoading,isAuthenticated}=this.state
         const posts=this.props.posts[0].userposts
         if (this.state.isLoading) {
             return(
                 <Loading />
             )
         }
-        if (posts) {
-            
+        if (!isLoading && !isAuthenticated) {
+            return(
+                <Redirect to='/' />
+        )}
+        
+        if (!isLoading && isAuthenticated) {
         if(posts.length>0){    
             return (
                 <div className="allpostsofuserappearhere" id="searchedposts">
@@ -125,12 +117,13 @@ class Postsdiv extends Component {
                 </div>    
         )
         }
-    }
+    
+}
     else{
-        return(<>ruo zara sabar karo</>)
+        return(<><Loading /></>)
     }
     
-
+        
     }
 }
 

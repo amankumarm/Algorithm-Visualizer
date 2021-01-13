@@ -13,10 +13,39 @@ class Posthere extends Component {
              image:false,
              file:false,
              category:"",
-             posting:false
-
+             posting:false,
+            loggedin:false,
+            isLoading:false
+        }
+        this.loggedInCheck=this.loggedInCheck.bind(this)
+    }
+    
+    loggedInCheck=async()=>{
+        try {
+          const resp = await axios.get('/user/getstatus')
+          const status=resp.status
+         if (status===200) {
+            this.setState({
+              loggedin:true
+            })
+         }
+        } catch (error) {
+          console.log(error)
         }
     }
+    
+    componentDidMount() {
+        if(!this.props.auth[0].isAuthenticated){
+            this.setState({...this.state,isLoading:true})
+            this.loggedInCheck()
+        }
+        else{
+            this.setState({...this.state,loggedin:true})
+        }
+        this.setState({...this.state,isLoading:false})
+        
+    }   
+    
     
     changehandler=(e)=>{
         this.setState({
@@ -80,9 +109,11 @@ class Posthere extends Component {
         }        
     }
     render() {
+
+
         const auth=this.props.auth[0]
         const user=this.props.auth[0].user
-        if (auth.isAuthenticated) {
+        if (this.state.loggedin) {
         return (
             
             <div className="submit-outer">
@@ -150,7 +181,12 @@ class Posthere extends Component {
             </div>
             </div>
         )
-    } else {
+    } 
+    else if(this.state.isLoading && !this.state.loggedin){
+        return (<><Loading /></>)
+
+    }
+    else if(!this.state.isLoading && !this.state.loggedin) {
      return <Redirect to='/Login' />       
     }
     

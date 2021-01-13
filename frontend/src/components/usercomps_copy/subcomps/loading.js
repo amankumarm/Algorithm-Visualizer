@@ -1,8 +1,8 @@
 import React from "react";
-
+import './styles.css'
 function Loading(props) {
     return (
-        <h1>Loading</h1>
+        <img className='loading' src={'./other/spinner.svg'} />
     )
 }
 

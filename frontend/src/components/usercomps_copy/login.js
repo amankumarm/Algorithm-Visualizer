@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './subcomps/login.css'
 import { Link, Redirect } from 'react-router-dom'
-import { rest } from 'lodash'
 import axios from 'axios'
+import regeneratorRuntime from 'regenerator-runtime'
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -12,8 +12,22 @@ class Login extends Component {
             loggedin:false
         }
     }
-
-
+    loggedInCheck=async()=>{
+        try {
+          const resp = await axios.get('/user/getstatus')
+          const status=resp.status
+         if (status===200) {
+            this.setState({
+              loggedin:true
+            })
+         }
+        } catch (error) {
+          console.log(error)
+        }
+    }
+    componentDidMount(){
+      this.loggedInCheck()
+    }
     submithandler=(e)=>{
       e.preventDefault()
       this.setState({
@@ -24,7 +38,7 @@ class Login extends Component {
 
 
     render() {
-      if(this.props.isauthenticated===true){
+      if(this.state.loggedin===true){
         return <Redirect to='/' />
       }
       else{
