@@ -9,7 +9,7 @@ export class home extends Component {
         super(props)
         this.state={
             isAuthenticated:false,
-            user:"aman",
+            user:null,
             isRegistered:false,
             isLoading:false
         }
@@ -19,7 +19,8 @@ export class home extends Component {
     asyncFunc= async ()=> {
         try {
           const response = await axios.get("/user/getstatus");
-            this.setState({
+          if(response.status!==403){
+          this.setState({
                 ...this.state,
                 isAuthenticated:true,
                 user:response.data.user,
@@ -28,6 +29,7 @@ export class home extends Component {
             console.log(this.state)
             const setauth=this.props.auth[1]
             setauth(this.state)
+        }
         } catch (error) {
            this.setState({
                ...this.state,
@@ -37,12 +39,15 @@ export class home extends Component {
       }
     
     componentDidMount(){
+    
+        if (!this.props.auth.isAuthenticated) {
         this.setState({
             ...this.state,
             isLoading:true
         })
-        
         this.asyncFunc()
+        }
+        console.log("user was loaded")
     }
     
     render() {

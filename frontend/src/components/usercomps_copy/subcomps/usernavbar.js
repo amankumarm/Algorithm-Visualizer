@@ -75,7 +75,7 @@ class Usernavbar extends Component {
                            
                         </li>
                         <li className="nav-item active">
-                        <a className="nav-link" href="/user#/userposts">My Posts</a>
+                        <a className="nav-link" href="/user#/Dashboard">My Posts</a>
                         </li>
                         <li className="nav-item active">
                         <a className="nav-link" href="/user#/post">CREATE</a>

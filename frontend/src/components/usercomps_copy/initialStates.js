@@ -6,9 +6,6 @@ export const authState={
 }
 export const errState={data:{},ststus:"",message:""}
 export const postState={
-    userdata:{},
-    userposts:[],
-    allposts:[],
-    allusers:[],
-    searcheduserspost:[]
+   userposts:[],
+   status:false,
 }

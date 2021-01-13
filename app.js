@@ -41,7 +41,7 @@ app.use('/user',userroute)
 app.use('/file',fileuploadroute)
 
 app.get('/',(req,res)=>{
-     // res.render('home copy')
+     res.render('home')
 })
 app.get('/v/',(req,res)=>{
      res.render('root')

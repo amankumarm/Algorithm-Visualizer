@@ -29,8 +29,8 @@ router.post('/post',checkauth,(req,res)=>{
       const hnewname=func()
       
       var post={
-          html:`./static/userPosts/html/${hnewname}.html`,
-          image:`./static/userPosts/images/${inewname}.${incimageformat}`,
+          html:`./userPosts/html/${hnewname}.html`,
+          image:`./userPosts/images/${inewname}.${incimageformat}`,
           category
       }
     
@@ -59,7 +59,13 @@ router.post('/post',checkauth,(req,res)=>{
 })
 
 router.get('/getuserposts',checkauth,(req,res)=>{
-        
+    const id=req.user.googleid
+    Posts.find({id})
+    .then(allposts=>{
+        res.status(200).json({posts:allposts[0].posts})
+    })
+    .catch(err=>res.status(503).json({msg:"Something Went Wrong. Please try again later"}))
+    // res.end()
 })
 
 
