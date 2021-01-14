@@ -9,7 +9,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="mypostsview">
-                <Usernavbar />
+                <Usernavbar auth={this.props.auth} posts={this.props.posts}/>
                 <Postsdiv auth={this.props.auth} posts={this.props.posts}/>
             </div>
         )

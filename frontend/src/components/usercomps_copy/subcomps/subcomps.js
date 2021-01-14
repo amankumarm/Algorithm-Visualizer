@@ -72,12 +72,12 @@ class Postsdiv extends Component {
                 <Loading />
             )
         }
-        if (!isLoading && !isAuthenticated) {
+        if (!isLoading && !this.props.auth[0].isAuthenticated) {
             return(
-                <Redirect to='/' />
+                <Redirect to='/Login' />
         )}
         
-        if (!isLoading && isAuthenticated) {
+        if (!isLoading && this.props.auth[0].isAuthenticated) {
         if(posts.length>0){    
             return (
                 <div className="allpostsofuserappearhere" id="searchedposts">

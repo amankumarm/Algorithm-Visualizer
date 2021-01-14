@@ -39,8 +39,8 @@ export class home extends Component {
       }
     
     componentDidMount(){
-    
-        if (!this.props.auth.isAuthenticated) {
+        console.log(this.props)
+        if (!this.props.auth[0].isAuthenticated) {
         this.setState({
             ...this.state,
             isLoading:true
@@ -59,10 +59,10 @@ export class home extends Component {
             )
         }
 
-        if(this.state.isAuthenticated){
+        if(this.props.auth[0].isAuthenticated){
             return (
                 <div className="home-content">
-                    <Usernavbar />
+                    <Usernavbar auth={this.props.auth} posts={this.props.posts} />
                         <div className="home-center">
                             <div className="home-container">
                                 <h1 align="center">Let's Build This Together</h1>
@@ -79,13 +79,16 @@ export class home extends Component {
                 </div>
             )
         }
-        else{
-            console.log(this.state)
+        else if(!this.props.auth[0].isAuthenticated){
             return(
-           <Redirect to ='/Login' />    
+                <Redirect to='/Login' />
+                )
+        }
+        else{
+            return (
+                <> 404 page Here </>
             )
         }
-        
     }
 }
 

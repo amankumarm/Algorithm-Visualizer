@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './subcomps.css'
 import {Link, Redirect} from 'react-router-dom'
 import Searchresult from '../searchresult'
+import axios from 'axios'
+import { authState } from '../initialStates'
 class Usernavbar extends Component {
 
 
@@ -12,7 +14,8 @@ class Usernavbar extends Component {
              usersearch:'',
              startsearch:false,
              posts:[],
-             users:[]
+             users:[],
+             logout:false
         }
         this.changehandler=this.changehandler.bind(this)
         this.finduser=this.finduser.bind(this)
@@ -27,6 +30,27 @@ class Usernavbar extends Component {
         // console.log(this.state)
     }    
 
+componentDidMount() {
+    console.log(this.props)
+}
+
+    logout=(e)=>{
+        console.log("Sdfwd")
+        axios.get('/logout')
+        .then(res=>{
+            console.log(this.props)
+            if (res.data.loggedout) {
+                // const setauth=this.props.auth[1]
+                // const setposts=this.props.posts[1]
+                // setauth(authState)
+                // setposts(postState)
+                window.location='http://localhost:3000'
+            }
+
+        })
+        .catch(err=>console.log(err))
+        this.setState({...this.state,logout:true})
+    }
     finduser=(e)=>{
         e.preventDefault()
         console.log(this.state)
@@ -38,7 +62,7 @@ class Usernavbar extends Component {
     }
     render() {
 
-        if(true){
+        if(!true){
             if(this.state.startsearch && this.state.usersearch){
                 return <Redirect to={{
                     pathname: '/usersearch',
@@ -54,6 +78,8 @@ class Usernavbar extends Component {
 
         />
             }
+        }
+        
             else{
         return (
                         <nav className="navbar navbar-expand-lg navbar-light mynavbar">
@@ -85,7 +111,7 @@ class Usernavbar extends Component {
                             <a className="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hi! {""}</a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" >Logout</a>
+                            <a className="dropdown-item" onClick={this.logout}>Logout</a>
                             </div>
                         </li>
                         </ul>
@@ -97,7 +123,8 @@ class Usernavbar extends Component {
         }
         }
     
-    }
+
+ 
 }
 
 

@@ -17,8 +17,12 @@ class Login extends Component {
           const resp = await axios.get('/user/getstatus')
           const status=resp.status
          if (status===200) {
-            this.setState({
-              loggedin:true
+            const [auth,setauth]=this.props.auth
+            setauth({
+              ...auth,
+                isAuthenticated:true,
+                user:resp.data.user,
+                isLoading:false
             })
          }
         } catch (error) {
@@ -38,7 +42,7 @@ class Login extends Component {
 
 
     render() {
-      if(this.state.loggedin===true){
+      if(this.props.auth[0].isAuthenticated){
         return <Redirect to='/' />
       }
       else{

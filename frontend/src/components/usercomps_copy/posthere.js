@@ -113,12 +113,12 @@ class Posthere extends Component {
 
         const auth=this.props.auth[0]
         const user=this.props.auth[0].user
-        if (this.state.loggedin) {
+        if (user.googleid) {
         return (
             
             <div className="submit-outer">
                 <ToastContainer />
-                    <Usernavbar />
+                    <Usernavbar auth={this.props.auth} posts={this.props.posts}/>
             <div className="postsdiv">
                 <div className="submit-left submit-box">
                     <div className="submit-right-inner">
@@ -182,11 +182,11 @@ class Posthere extends Component {
             </div>
         )
     } 
-    else if(this.state.isLoading && !this.state.loggedin){
+    else if(this.state.isLoading && !user.googleid){
         return (<><Loading /></>)
 
     }
-    else if(!this.state.isLoading && !this.state.loggedin) {
+    else if(!this.state.isLoading && !user.googleid) {
      return <Redirect to='/Login' />       
     }
     

@@ -54,6 +54,12 @@ app.get('/test',(req,res)=>{
 //     
 })
 
+app.get('/logout', function(req, res){
+     
+     req.logout();
+     res.json({loggedout:true });
+   });
+
 //check git logs
 
 
