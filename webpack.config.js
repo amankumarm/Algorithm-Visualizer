@@ -14,6 +14,7 @@ module.exports={
                 }
                 
             },
+            { test: /\.m?js/, type: "javascript/auto" },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
