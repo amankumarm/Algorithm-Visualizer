@@ -54,7 +54,7 @@ class App extends Component{
                                 <Switch>
                                     <Route exact path="/Simulations" component={Simulations}></Route>
                                     <Route exact path="/About" component={About}></Route>
-                                    <Route exact path="/Contribute" component={Login}></Route>
+                                    {/* <Route exact path="/Contribute" component={Login}></Route> */}
                                     <Route exact path="/Simulations/algorithms/array"component={Sorting}></Route>
         							<Route exact path="/k-means" component={KMeans} />
                                     <Route exact path="/linear-regression" component={LinRegress} /> 
