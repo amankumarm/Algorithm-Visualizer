@@ -12,6 +12,3 @@ def main():
 @app.errorhandler(404)
 def redirect_404(e):
    return redirect('/v#/Simulations')
-if __name__ == '__main__':
-   app.run(debug=True,host="localhost", port=8000)
-   
