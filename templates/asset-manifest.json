@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9724b520.chunk.css",
+    "main.js": "/static/js/main.18fb9c61.chunk.js",
+    "main.js.map": "/static/js/main.18fb9c61.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8468bcb3.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8468bcb3.js.map",
+    "static/js/2.d2cec85e.chunk.js": "/static/js/2.d2cec85e.chunk.js",
+    "static/js/2.d2cec85e.chunk.js.map": "/static/js/2.d2cec85e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.9724b520.chunk.css.map": "/static/css/main.9724b520.chunk.css.map",
+    "static/js/2.d2cec85e.chunk.js.LICENSE.txt": "/static/js/2.d2cec85e.chunk.js.LICENSE.txt",
+    "static/media/PlotHeader.css": "/static/media/brand-noise.e49e464d.png",
+    "static/media/PlotExplanation.css": "/static/media/darker-noise.abf811fc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8468bcb3.js",
+    "static/js/2.d2cec85e.chunk.js",
+    "static/css/main.9724b520.chunk.css",
+    "static/js/main.18fb9c61.chunk.js"
+  ]
+}

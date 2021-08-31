@@ -1,10 +1,17 @@
-from flask import Flask,render_template
-
+from flask import Flask,render_template,url_for,redirect
 app=Flask(__name__)
-@app.route('/')
+@app.route('/v')
 def root():
    return render_template("index.html")
-
+@app.route('/graph')
+def graph():
+   return render_template("graph.html")
+@app.route('/')
+def main():
+   return redirect('/v#/Simulations')
+@app.errorhandler(404)
+def redirect_404(e):
+   return redirect('/v#/Simulations')
 if __name__ == '__main__':
-   app.run(debug=True)
+   app.run(debug=True,host="localhost", port=8000)
    

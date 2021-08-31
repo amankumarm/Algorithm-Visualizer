@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../../inputcomponents/ic";
 import "./simulations.css";
-import { Link } from "@material-ui/core";
 class Simulations extends Component {
 	render() {
 		return (
@@ -44,7 +43,7 @@ class Simulations extends Component {
 									<ul>
 										<li className="li">
 											<a
-												href="/v#/Simulations/algorithms/array"
+												href="/graph"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Breadth First Search
@@ -52,7 +51,7 @@ class Simulations extends Component {
 										</li>
 										<li className="li">
 											<a
-												href="/v#/Simulations/algorithms/array"
+												href="/graph"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Depth First Search
@@ -60,7 +59,7 @@ class Simulations extends Component {
 										</li>
 										<li className="li">
 											<a
-												href="/v#/Simulations/algorithms/array"
+												href="/graph"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Djikstra{" "}
@@ -68,7 +67,7 @@ class Simulations extends Component {
 										</li>
 										<li className="li">
 											<a
-												href="http://localhost:3000/Simulations/algorithms/array"
+												href="/graph"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												Iterative Depth First Search
@@ -76,7 +75,7 @@ class Simulations extends Component {
 										</li>
 										<li className="li">
 											<a
-												href="http://localhost:3000/Simulations/algorithms/array"
+												href="/graph"
 												style={{ textDecoration: "none", color: "white" }}
 											>
 												A Star
